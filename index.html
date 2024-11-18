@@ -123,12 +123,8 @@
     
             <div class="row">
                 <div class="col">
-                    <label for="phone">Telephone:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Telephone" required>
-                </div>
-                <div class="col">
-                    <label for="mobile-phone">Mobile Phone:</label>
-                    <input type="tel" id="mobile-phone" name="mobile-phone" placeholder="Mobile Phone" required>
+                    <label for="mobile-phone">Phone number (xxx-xxx-xxxx):</label>
+                    <input type="tel" id="mobile-phone" name="mobile-phone" placeholder="Mobile Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                 </div>
                 <div class="col">
                     <label for="email">Email Address:</label>
@@ -164,7 +160,7 @@
                 <div class="row reference-fields">
     
                 </div>
-                <button type="button" id="add-reference" style="display: none;"">Add a Reference</button>
+                <button type="button" id="add-reference" style="display: none;">Add a Reference</button>
             </div>
             <script>
                 document.getElementById("add-reference").addEventListener("click", function() {
@@ -187,8 +183,8 @@
                         <input type="text" id="reference-company" name="reference-company" placeholder="Company" required>
                     </div>
                     <div class="col">
-                        <label for="reference-phone">Phone:</label>
-                        <input type="tel" id="reference-phone" name="reference-phone" placeholder="Phone" required>
+                        <label for="reference-phone">Phone (xxx-xxx-xxxx):</label>
+                        <input type="tel" id="reference-phone" name="reference-phone" placeholder="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                     </div>
                         <div class="col">
                             <button type="button" class="remove-reference">Remove</button>
@@ -389,11 +385,11 @@
             convictionDiv.innerHTML = `
                 <div class="col">
                     <label for="start-date">Date Occurred:</label>
-                    <input type="date" name="start-date">
+                    <input type="date" name="start-date" required>
                 </div>
                 <div class="col">
                     <label for="misdemeanor-felony">Misdemeanor/Felony:</label>
-                    <select name="misdemeanor-felony">
+                    <select name="misdemeanor-felony" required>
                         <option value="none">Select one</option>
                         <option value="misdemeanor">Misdemeanor</option>
                         <option value="felony">Felony</option>
@@ -401,11 +397,11 @@
                 </div>
                 <div class="col">
                     <label for="description">Description:</label>
-                    <input type="text" name="description" placeholder="Description">
+                    <input type="text" name="description" placeholder="Description" required>
                 </div>
                 <div class="col">
                     <label for="confinement">Diciplinary Action Taken:</label>
-                    <select name="confinement">
+                    <select name="confinement" required>
                         <option value="none">Select one</option>
                         <option value="confinement">Confinement</option>
                         <option value="probation">Probation</option>
@@ -414,7 +410,7 @@
                 </div>
                 <div class="col">
                     <label for="months-years">Sentence Duration:</label>
-                    <input type="text" name="months-years" placeholder="Months/Years">
+                    <input type="text" name="months-years" placeholder="Months/Years" required>
                 </div>
                 <div class="col">
                     <button type="button" class="remove-conviction">Remove</button>
@@ -463,22 +459,22 @@
             educationDiv.innerHTML = `
                 <div class="col">
                     <label for="graduation-date">Graduation Date:</label>
-                    <input type="date" name="graduation-date">
+                    <input type="date" name="graduation-date" required>
                 </div>
                 <div class="col">
                     <label for="school-type">School Type:</label>
-                    <select name="school-type">
+                    <select name="school-type" required>
                         <option value="college">College</option>
                         <option value="highschool">High School</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="school-name">School Name:</label>
-                    <input type="text" name="school-name" placeholder="School Name">
+                    <input type="text" name="school-name" placeholder="School Name" required>
                 </div>
                 <div class="col">
                     <label for="state">State:</label>
-                    <select id="state" name="state">
+                    <select id="state" name="state" required>
                         <option value="">Select state</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -534,7 +530,7 @@
                 </div>
                 <div class="col">
                     <label for="majors">Majors:</label>
-                    <input type="text" name="majors" placeholder="Majors">
+                    <input type="text" name="majors" placeholder="Majors" required>
                 </div>
                 <div class="col">
                     <button type="button" class="remove-education">Remove</button>
@@ -582,19 +578,19 @@
             experienceDiv.innerHTML = `
                 <div class="col">
                     <label for="employer">Employer Name</label>
-                    <input type="text" name="employer" placeholder="Employer Name">
+                    <input type="text" name="employer" placeholder="Employer Name" required>
                 </div>
                 <div class="col">
                     <label for="street">Street Address</label>
-                    <input type="text" name="street" placeholder="Street Address">
+                    <input type="text" name="street" placeholder="Street Address" required>
                 </div>
                 <div class="col">
                     <label for="city">City</label>
-                    <input type="text" name="city" placeholder="City">
+                    <input type="text" name="city" placeholder="City" required>
                 </div>
                 <div class="col">
                     <label for="state">State</label>
-                    <select name="state">
+                    <select name="state" required>
                         <option value="">Select state</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -650,27 +646,27 @@
                 </div>
                 <div class="col">
                     <label for="zip">Zip Code</label>
-                    <input type="text" name="zip" placeholder="Zip Code">
+                    <input type="text" name="zip" placeholder="Zip Code" required>
                 </div>
                 <div class="col">
-                    <label for="phone">Mobile Phone</label>
-                    <input type="text" name="phone" placeholder="Mobile Phone">
+                    <label for="phone">Phone (xxx-xxx-xxxx)</label>
+                    <input type="text" name="phone" placeholder="Mobile Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                 </div>
                 <div class="col">
                     <label for="email">Email Address</label>
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="col">
                     <label for="supervisor">Name of Last Supervisor</label>
-                    <input type="text" name="supervisor" placeholder="Last Name">
+                    <input type="text" name="supervisor" placeholder="Last Name" required>
                 </div>
                 <div class="col">
                     <label for="last-title">Your Last Job Title</label>
-                    <input type="text" name="last-title" placeholder="Title">
+                    <input type="text" name="last-title" placeholder="Title" required>
                 </div>
                 <div class="col">
                     <label for="start-date">Start Date</label>
-                    <input type="date" name="start-date">
+                    <input type="date" name="start-date" required>
                 </div>
                 <div class="col">
                     <label for="end-date">End Date</label>
@@ -684,9 +680,11 @@
                     <label for="duties">Duties Performed</label>
                     <textarea name="duties" rows="4" placeholder="Please Explain"></textarea>
                 </div>
+                <div class="col-auto">
+                    <input type="checkbox" name="contact-employer">
+                </div>
                 <div class="col">
                     <label for="contact-employer">
-                        <input type="checkbox" name="contact-employer">
                         May we contact this employer?
                     </label>
                 </div>

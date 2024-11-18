@@ -127,31 +127,13 @@ function toggleExperienceButton() {
 	}
 }
 
-// document
-// 	.getElementById("main-form")
-// 	.addEventListener("submit", function (event) {
-// 		const firstNameField = document.getElementById("first-name");
-// 		const lastNameField = document.getElementById("last-name");
-// 		const emailField = document.getElementById("email");
-
-// 		if (!firstNameField.value.trim()) {
-// 			nameField.style.backgroundColor = "#F77979";
-// 			alert("Please enter your first name.");
-// 			event.preventDefault(); // Prevent form submission
-// 			return;
-// 		}
-// 		if (!lastNameField.value.trim()) {
-// 			nameField.style.backgroundColor = "#F77979";
-// 			alert("Please enter your last name.");
-// 			event.preventDefault(); // Prevent form submission
-// 			return;
-// 		}
-// 		if (!emailField.value.trim()) {
-// 			nameField.style.backgroundColor = "#F77979";
-// 			alert("Please enter your email.");
-// 			event.preventDefault(); // Prevent form submission
-// 			return;
-// 		}
-
-// 		// Form will submit if all validations pass
-// 	});
+document
+	.getElementById("main-form")
+	.addEventListener("submit", function (event) {
+		if (this.checkValidity()) {
+			alert("Form was submitted");
+		} else {
+			event.preventDefault();
+		}
+		// Form will submit if all validations pass
+	});
